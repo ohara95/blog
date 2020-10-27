@@ -9,6 +9,7 @@ export default (reducer, actions, initial) => {
     for (const key in actions) {
       boundActions[key] = actions[key](dispatch);
     }
+
     return (
       <Context.Provider value={{ state, ...boundActions }}>
         {children}
@@ -17,3 +18,5 @@ export default (reducer, actions, initial) => {
   };
   return { Context, Provider };
 };
+
+// {addBlog:()=>dispatch({})}
